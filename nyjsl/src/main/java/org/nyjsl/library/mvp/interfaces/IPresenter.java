@@ -7,6 +7,6 @@ package org.nyjsl.library.mvp.interfaces;
 public interface IPresenter {
 
     void onStart();
-    void onDestory();
+    void onDestroy();
 
 }

@@ -6,5 +6,5 @@ package org.nyjsl.library.mvp.interfaces;
 
 public interface IModel {
 
-    void onDestory();
+    void onDestroy();
 }

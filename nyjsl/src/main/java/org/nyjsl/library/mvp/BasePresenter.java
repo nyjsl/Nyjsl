@@ -36,7 +36,7 @@ public class BasePresenter<M extends IModel,V extends BaseView> implements IPres
     }
 
     @Override
-    public void onDestory() {
+    public void onDestroy() {
         if(useEventBus()){
             EventBus.getDefault().unregister(this);
         }
@@ -54,7 +54,7 @@ public class BasePresenter<M extends IModel,V extends BaseView> implements IPres
 
     protected void releaseObjects(){
         if(null != mModel){
-            mModel.onDestory();
+            mModel.onDestroy();
             mModel = null;
         }
         mView = null;
