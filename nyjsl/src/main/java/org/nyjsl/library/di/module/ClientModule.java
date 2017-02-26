@@ -22,6 +22,8 @@ public class ClientModule {
 
     private static final int TIME_OUT = 15;
 
+    private static final String BASE_URL = "";
+
     private AppManager mAppManager;
 
     public ClientModule(AppManager mAppManager) {
@@ -43,7 +45,7 @@ public class ClientModule {
      */
     @Singleton
     @Provides
-    Retrofit provideRetrfit(Retrofit.Builder builder, OkHttpClient client, HttpUrl baseUrl){
+    Retrofit provideRetrofit(Retrofit.Builder builder, OkHttpClient client, HttpUrl baseUrl){
         return builder.baseUrl(baseUrl).client(client)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) //RxJava2
                 .addConverterFactory(GsonConverterFactory.create())        //Gson
@@ -69,6 +71,12 @@ public class ClientModule {
     @Provides
     OkHttpClient.Builder provideOkHttpClientBuilder(){
         return new OkHttpClient.Builder();
+    }
+
+    @Singleton
+    @Provides
+    HttpUrl provideHttpUrl() {
+        return HttpUrl.parse(BASE_URL);
     }
 
 }

@@ -7,8 +7,6 @@ import org.nyjsl.library.di.component.DaggerAppComponent;
 import org.nyjsl.library.di.module.AppModule;
 import org.nyjsl.library.di.module.ClientModule;
 
-import javax.inject.Inject;
-
 /**
  * Created by pc on 2017/2/17.
  */
