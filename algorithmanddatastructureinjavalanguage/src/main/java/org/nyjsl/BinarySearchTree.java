@@ -120,7 +120,7 @@ public class BinarySearchTree<T extends Comparable<? super T>> {
         }else if(result<0){
             node.lefChild = remove(item, node.lefChild);
         } else if (node.lefChild!= null && node.rightChild!= null) {
-            node.element = findMax(node.rightChild).element;
+            node.element = findMin(node.rightChild).element;
             node.rightChild = remove(node.element, node.rightChild);
         }else{
             node = node.lefChild != null? node.lefChild:node.rightChild;
