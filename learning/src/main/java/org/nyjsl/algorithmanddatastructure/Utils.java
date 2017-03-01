@@ -1,4 +1,4 @@
-package org.nyjsl;
+package org.nyjsl.algorithmanddatastructure;
 
 public class Utils {
 	

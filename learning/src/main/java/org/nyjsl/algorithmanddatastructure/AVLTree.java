@@ -1,4 +1,4 @@
-package org.nyjsl;
+package org.nyjsl.algorithmanddatastructure;
 
 /**
  * Created by pc on 2017/2/24.

@@ -1,1 +1,1 @@
-include ':app', ':nyjsl', ':utils', ':algorithmanddatastructureinjavalanguage'
+include ':app', ':nyjsl', ':utils', ':learning'
