@@ -3,6 +3,7 @@ package org.nyjsl.concurrency;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Semaphore;
 
 /**
@@ -30,10 +31,33 @@ public class Fundamental {
 
     //高级同步对象:
     //Seamphore 信号量,信号量一般用在数量有限的资源,每类资源有一个对象的信号量,信号量的值表示资源的可用数量.
+    //CountDownLatch 一个线程等待另外的线程完成任务才能继续
+    //CyclicBarrier
+    //Exchanger
     public static void main(String[] args) {
 //        testWorkerVolatile();
 //        testWrongUseOfVolatile();
 //        testSemap();
+
+        testCountDownLatch();
+    }
+
+    private static void testCountDownLatch() {
+        List<String> urls = new ArrayList<>();
+        urls.add("first");
+        urls.add("second");
+        urls.add("third");
+        urls.add("forth");
+        CountDownLatch cdl = new CountDownLatch(urls.size());
+        for(String s: urls){
+            new Thread(new PageSizeSorter.GetSizeWorker(s,cdl)).start();
+        }
+        try {
+            cdl.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("now completed");
     }
 
     private static void testSemap() {
@@ -189,6 +213,33 @@ public class Fundamental {
 
         public Printer(String name) {
             this.name = name;
+        }
+    }
+
+
+    private static class PageSizeSorter{
+
+        private static class GetSizeWorker implements Runnable{
+
+            private final String urlString;
+            private final CountDownLatch signal;
+
+            public GetSizeWorker(String urlString, CountDownLatch signal) {
+                this.urlString = urlString;
+                this.signal = signal;
+            }
+
+            @Override
+            public void run() {
+                try {
+                    System.out.println("i'm:"+urlString);
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }finally {
+                    signal.countDown();
+                }
+            }
         }
     }
 
