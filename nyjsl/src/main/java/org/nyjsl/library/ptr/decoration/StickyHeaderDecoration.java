@@ -23,7 +23,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
+import org.nyjsl.library.ptr.adapter.RecyclerArrayAdapter;
 
 import java.util.HashMap;
 import java.util.Map;

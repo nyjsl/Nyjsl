@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
-import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
+import org.nyjsl.library.ptr.adapter.RecyclerArrayAdapter;
 
 import static android.widget.LinearLayout.VERTICAL;
 
