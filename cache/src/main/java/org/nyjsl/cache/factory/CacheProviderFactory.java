@@ -20,7 +20,7 @@ public abstract class CacheProviderFactory {
     public static final int CACHE_PROVIDER_DISK = 0;
     public static final int CACHE_PROVIDER_DB = 1;
 
-    public static CacheManagerProvider getCacheProvider(@CACHE_PROVIDER int provider){
+    public static CacheManagerProvider buildCacheProvider(@CACHE_PROVIDER int provider){
         CacheManagerProvider result = null;
         if(provider == CACHE_PROVIDER_DISK){
             result = new DiskCacheManagerProvider<>();

@@ -64,8 +64,8 @@ public class BaseCache<T> implements Cache<T> {
     }
 
     private CacheManager getCacheManager() {
-        final CacheManagerProvider cacheProvider = CacheProviderFactory.getCacheProvider(provider);
-        return cacheProvider.getCacheManager(manager);
+        final CacheManagerProvider cacheProvider = CacheProviderFactory.buildCacheProvider(provider);
+        return cacheProvider.provideCacheManager(manager);
     }
 
     public static final class Builder<T>{

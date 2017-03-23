@@ -12,7 +12,7 @@ import org.nyjsl.cache.manager.DiskLruCacheManager;
 public class DiskCacheManagerProvider<T extends Cache> implements CacheManagerProvider<T> {
 
     @Override
-    public CacheManager<T> getCacheManager(@CACHE_MANAGER int manager) {
+    public CacheManager<T> provideCacheManager(@CACHE_MANAGER int manager) {
        if (manager == MANAGER_LRU){
             return new DiskLruCacheManager<>();
        }else{

@@ -24,7 +24,7 @@ public interface CacheManagerProvider<T extends Cache> {
      */
     int MANAGER_LRU = 1;
 
-    CacheManager<T> getCacheManager(@CACHE_MANAGER int manager);
+    CacheManager<T> provideCacheManager(@CACHE_MANAGER int manager);
 
     @IntDef({MANAGER_NORMAL,MANAGER_LRU})
     @Retention(RetentionPolicy.SOURCE)
