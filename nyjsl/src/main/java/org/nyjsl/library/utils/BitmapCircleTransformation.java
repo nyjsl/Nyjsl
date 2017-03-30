@@ -14,15 +14,11 @@ import android.support.annotation.ColorRes;
 import android.support.annotation.DimenRes;
 import android.support.v4.content.ContextCompat;
 
-import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
-import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
-import com.bumptech.glide.load.resource.bitmap.TransformationUtils;
-
 /**
  * Created by pc on 2016/12/23.
  */
 
-public class BitmapCircleTransformation extends BitmapTransformation{
+public class BitmapCircleTransformation extends BitmapTransformation {
 
 
     private static final int DEFAULT_BORDER_WIDTH = 0;
