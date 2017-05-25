@@ -1,1 +1,1 @@
-include ':app', ':nyjsl', ':javaUtils', ':learning', ':cache', ':androidutils'
+include ':app', ':nyjsl', ':javaUtils', ':learning', ':cache', ':androidutils', ':androidlearning'
