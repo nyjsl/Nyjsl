@@ -18,6 +18,18 @@ public class Test {
 
 //        new Transform().testMap();
 //        new Transform().testFlatMap();
-        new Transform().testZip();
+//        new Transform().testZip();
+//        new Operators().testFilter();
+//        new Operators().testTake();
+//        new Operators().testAll();
+//        new Operators().testContains();
+//        new Operators().testDefaultEmpty();
+//        new Operators().testSkipWhile();
+        new Operators().testTakeUnitl();
+        try {
+            Thread.sleep(6000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

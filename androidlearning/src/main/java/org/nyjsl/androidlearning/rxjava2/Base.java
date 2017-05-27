@@ -1,9 +1,5 @@
 package org.nyjsl.androidlearning.rxjava2;
 
-
-import android.util.AndroidRuntimeException;
-import android.util.Log;
-
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
