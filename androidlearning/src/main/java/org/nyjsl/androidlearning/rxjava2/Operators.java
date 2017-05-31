@@ -17,6 +17,8 @@ import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Predicate;
 
+import static android.os.Build.VERSION_CODES.N;
+
 /**
  * Created by weixing on 2017/5/26.
  * E-mail:wei.xing@ucsmy.com
@@ -158,6 +160,32 @@ public class Operators {
             @Override
             public void accept(@NonNull Long aLong) throws Exception {
                 System.out.println(aLong);
+            }
+        });
+    }
+
+    public void testSequenceEqual() {
+        Observable.sequenceEqual(Observable.just(1,2,3),Observable.just(1,2,3)).subscribe(new Consumer<Boolean>() {
+            @Override
+            public void accept(@NonNull Boolean aBoolean) throws Exception {
+                System.out.println(aBoolean);
+            }
+        });
+        Observable.sequenceEqual(Observable.just(1,2,1),Observable.just(1,2,3)).subscribe(new Consumer<Boolean>() {
+            @Override
+            public void accept(@NonNull Boolean aBoolean) throws Exception {
+                System.out.println(aBoolean);
+            }
+        });
+
+    }
+
+
+    public void testDebounce() {
+        Observable.just(1,2,3).debounce(2, TimeUnit.SECONDS).subscribe(new Consumer<Integer>() {
+            @Override
+            public void accept(@NonNull Integer integer) throws Exception {
+                System.out.println(integer);
             }
         });
     }

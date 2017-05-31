@@ -22,10 +22,14 @@ public class Test {
 //        new Operators().testFilter();
 //        new Operators().testTake();
 //        new Operators().testAll();
+        new Operators().testDebounce();
 //        new Operators().testContains();
 //        new Operators().testDefaultEmpty();
 //        new Operators().testSkipWhile();
-        new Operators().testTakeUnitl();
+//        new Operators().testTakeUnitl();
+//        new Operators().testSequenceEqual();
+//        new Creation().testCreate();
+//        new Creation().testDefer();
         try {
             Thread.sleep(6000);
         } catch (InterruptedException e) {
